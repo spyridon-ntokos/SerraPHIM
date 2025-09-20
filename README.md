@@ -80,4 +80,4 @@ Also update:
 ## 📖 Citation
 
 If you use this project in your research, please cite:  
-> Ntokos, S. *SerraPHIM: Repurposing PhageHostLearn for Serratia Phage–Host Interaction Prediction.* Internship Report, 2025.  
+> Ntokos, S. *Repurposing PhageHostLearn to Serratia marcescens and Serratia plymuthica bacteria & phages* Internship Report, 2025.  
