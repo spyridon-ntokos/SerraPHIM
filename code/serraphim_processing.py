@@ -1,10 +1,37 @@
 """
+SerraPHIM — DATA PROCESSING
+=================================
+
 Created on 17.07.2025
+Author: snt (based on PhageHostLearn by @dimiboeckaerts)
 
-@author: snt 
-based on PhageHostLearn by @dimiboeckaerts
+This module contains utility functions used in the SerraPHIM project to:
+- process downloaded NCBI bacterial fasta archives into per-genome FASTA files,
+- curate and filter phage metadata TSVs from PhageScope,
+- split multi-FASTA phage collections into single-file FASTAs,
+- derive a species-aware phage-host interaction matrix from metadata,
+- run Pharokka on phage genomes and extract gene sequences,
+- run the PhageRBPdetect_v4 inference workflow against Pharokka outputs,
+- run Bakta on bacterial genomes and extract receptor-related proteins.
 
-SerraPHIM DATA PROCESSING
+The functions here are intended for batch processing in reproducible pipelines.
+They make minimal changes to input files and write outputs into the `data/` tree.
+
+Dependencies
+------------
+- Python 3.8+
+- biopython (Bio)
+- pandas
+- tqdm
+- transformers (for model loading in RBP detection)
+- esm (optional depending on other flows)
+- Pharokka and Bakta installed / available on PATH for the respective functions
+
+License / contribution
+----------------------
+This file is intended to be included in the SerraPHIM public repository.
+Please include appropriate LICENSE and citation information in the repo root.
+
 """
 
 # 0 - LIBRARIES
@@ -32,6 +59,49 @@ def process_ncbi_fasta(
     output_root="./data/bacteria_genomes",
     combine_plasmids=False
 ):
+    """
+    Convert NCBI .fna.gz GenBank/RefSeq dumps into per-genome FASTA files.
+
+    This function walks `input_root` recursively, opens any `*.fna.gz` file found,
+    and writes one or more FASTA files into `output_root`. The output filenames are
+    made filesystem-safe and attempt to preserve the first record header as a
+    human-readable identifier.
+
+    Behavior:
+    - If `combine_plasmids` is False (default) each sequence in the archive will
+      become a separate FASTA file (one-per-record).
+    - If `combine_plasmids` is True the function attempts to detect a main
+      chromosome record and any plasmid records, and writes either a single
+      `<name>_+_plasmids.fasta` (main + plasmids) or `<name>.fasta` when there are
+      no plasmids. If the header format is unexpected the function saves the
+      records but prints a warning.
+
+    Parameters
+    ----------
+    input_root : str or Path
+        Directory containing downloaded NCBI `.fna.gz` files (recursively searched).
+    output_root : str or Path
+        Directory to save individual genome FASTA files.
+    combine_plasmids : bool, optional
+        If True, attempt to group chromosomes + plasmids into one file per genome.
+        Default: False.
+
+    Returns
+    -------
+    None
+        Files are written directly to `output_root`. Progress is printed to stdout.
+
+    Notes
+    -----
+    - The function is conservative; when a header is ambiguous it issues a warning
+      and falls back to saving the provided records.
+    - The cleaning of file names replaces characters not in [A-Za-z0-9_.-] with '_'.
+
+    Example
+    -------
+    process_ncbi_fasta("~/downloads/ncbi", "./data/bacteria_genomes", combine_plasmids=True)
+    """
+
     input_root = Path(input_root)
     output_root = Path(output_root)
     output_root.mkdir(parents=True, exist_ok=True)
@@ -132,6 +202,34 @@ def load_or_create_curated_phage_metadata(
     input_dir="./data/PhageScope_metadata",
     output_file="serratia_complete-HQ_virulent_phage_metadata.tsv"
 ):
+    """
+    Load an existing curated phage metadata dataframe or create one by filtering TSVs.
+
+    This helper reads all TSV files under `input_dir` and filters rows relevant to
+    Serratia hosts, complete/high-quality genomes, and virulent lifestyle. If a
+    consolidated TSV (`output_file`) already exists it is returned directly.
+
+    Parameters
+    ----------
+    input_dir : str or Path
+        Directory containing raw metadata TSV files (one or more).
+    output_file : str
+        Relative filename under `input_dir` to save the consolidated table.
+
+    Returns
+    -------
+    pandas.DataFrame
+        A DataFrame containing the filtered metadata. If no matching phages are
+        found an empty DataFrame is returned.
+
+    Side effects
+    ------------
+    - Writes a TSV file to `input_dir/output_file` when it is created.
+
+    Example
+    -------
+    df = load_or_create_curated_phage_metadata("./data/PhageScope_metadata")
+    """
     output_path = Path(input_dir + '/' + output_file)
     input_dir = Path(input_dir)
 
@@ -182,6 +280,25 @@ def split_fasta_by_phage_id(
     big_fasta_path, 
     output_dir
 ):
+    """
+    Split a multi-record FASTA into one FASTA file per sequence.
+
+    Parameters
+    ----------
+    big_fasta_path : str or Path
+        Path to the multi-FASTA file to split.
+    output_dir : str or Path
+        Directory where individual FASTA files will be written.
+
+    Returns
+    -------
+    None
+        Files are written to `output_dir`. Prints a counter of written sequences.
+
+    Example
+    -------
+    split_fasta_by_phage_id("phages_all.fasta", "./data/phage_genomes")
+    """
     big_fasta_path = Path(big_fasta_path)
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -206,6 +323,44 @@ def derive_phage_host_interaction_matrix(
     phage_metadata_df=None,
     output_csv_path="./data/phage_host_interactions.csv"
 ):
+    """
+    Derive a species-aware phage-host interaction matrix from phage metadata.
+
+    The function builds a binary matrix (0/1) whose rows are bacterial accession IDs
+    parsed from filenames in `bacterial_genome_dir` and whose columns are phage IDs
+    from `phage_metadata_df`. Cells are set to 1 when the phage metadata indicates
+    that the phage infects the species associated with the accession.
+
+    Important
+    ---------
+    - This function expects the bacterial genome filenames to follow the convention
+      `'ACCESSION_<species>_<...>.fasta'`. The code extracts the first two tokens
+      after the accession to form a `Species_Tag` such as `Serratia_marcescens`.
+    - `phage_metadata_df` must contain at least the columns `Phage_ID` and `Host`.
+
+    Parameters
+    ----------
+    bacterial_genome_dir : str or Path
+        Directory containing per-accession bacterial FASTA files.
+    phage_metadata_df : pandas.DataFrame
+        DataFrame with phage metadata including 'Phage_ID' and 'Host'.
+    output_csv_path : str or Path
+        Path to save the resulting interaction CSV.
+
+    Returns
+    -------
+    pandas.DataFrame
+        The constructed interaction matrix (rows: accession IDs, columns: phage IDs).
+
+    Raises
+    ------
+    ValueError
+        If `phage_metadata_df` is None or empty.
+
+    Example
+    -------
+    df = derive_phage_host_interaction_matrix("./data/bacteria_genomes", phage_metadata_df)
+    """
     output_path = Path(output_csv_path)
     bacterial_genome_dir = Path(bacterial_genome_dir)
 
@@ -278,16 +433,48 @@ def pharokka_processing(
     add=False
 ):
     """
-    This function loops over the genomes in the phage genomes folder and processes them with Pharokka.
+    Run Pharokka on phage genomes and extract nucleotide gene sequences.
 
-    INPUTS:
-    - general path of the PhageHostLearn framework and data
-    - phage genomes path to the folder containing the phage genomes as separate FASTA files
-    - pharokka_executable: the Pharokka command or its path
-    - databases_path: path to installed pharokka databases
-    - data suffix to add to the phage_genes.csv file from Pharokka (default='')
-    - add: bool whether or not we are just adding new data or processing from scratch (default=False)
-    OUTPUT: phage_genes.csv containing all the phage genes.
+    This function iterates over FASTA files in `phage_genomes_path`, calls Pharokka
+    (the `phanotate`/`pharokka` pipeline) to annotate genes and then parses the
+    generated `pharokka.gff` file to extract gene coordinates and sequences.
+    The output is a CSV saved as `phage_genes{data_suffix}.csv` under `general_path`
+    with columns: ['phage_ID', 'gene_ID', 'gene_sequence'].
+
+    Parameters
+    ----------
+    general_path : str
+        Root path of the project (used to write `pharokka_results` and output CSV).
+    phage_genomes_path : str
+        Directory containing phage genome FASTA files (one FASTA per phage).
+    pharokka_executable : str
+        Command or full path to the Pharokka executable (e.g. `pharokka`).
+    databases_path : str
+        Path to Pharokka's database folder (passed with `-d`).
+    data_suffix : str, optional
+        Suffix appended to output CSV filename (default: '').
+    threads : int, optional
+        Number of threads to pass to Pharokka. Defaults to all available CPUs.
+    add : bool, optional
+        If True, append newly processed genes to an existing `phage_genes{suffix}.csv`
+        instead of overwriting.
+
+    Returns
+    -------
+    None
+        Writes `phage_genes{data_suffix}.csv` to `general_path`.
+
+    Notes
+    -----
+    - Pharokka must be installed and working on the PATH, or provide the full path.
+    - The function expects Pharokka to produce `pharokka.gff` in the per-phage
+      results folder; it will read that file and extract features not starting
+      with `tRNA`.
+    - On failure of Pharokka (non-zero exit), a CalledProcessError is raised.
+
+    Example
+    -------
+    pharokka_processing('/proj', '/proj/phage_genomes', '/usr/bin/pharokka', '/proj/pharokka_db')
     """
 
     if threads == None:
@@ -375,17 +562,58 @@ def process_and_detect_rbps_v4(
     add=False
 ):
     """
-    Process Pharokka results and run RBP detection using PhageRBPdetect_v4.
+    Run PhageRBPdetect_v4 inference on Pharokka protein predictions and save RBPs.
 
-    Parameters:
-    - general_path: Path to the main PhageHostLearn framework and data.
-    - model_path: Path to the fine-tuned ESM-2 model (e.g., 'RBPdetect_v4_ESMfine').
-    - data_suffix: Optional suffix for the output files.
-    - gpu_index: Index of the GPU to use (default=0).
-    - threads: Max CPU threads to use if GPU is not available.
-    - add: If True, only process phages not already in RBPbase.
+    This function iterates per-phage over the Pharokka result folders, loads the
+    fine-tuned ESM-2 sequence-classification model (PhageRBPdetect_v4), performs
+    per-protein inference and collects the proteins predicted as RBPs. The
+    resulting table `RBPbase{data_suffix}.csv` contains columns:
+        ['phage_ID', 'protein_ID', 'protein_sequence', 'dna_sequence', 'score']
 
-    Output: Saves `RBPbase.csv` with detected RBPs.
+    Device handling
+    ---------------
+    - If a CUDA-compatible GPU is available, the function will attempt to use it.
+    - If no CUDA GPU is present, it sets PyTorch thread limits to `threads` to
+      control CPU parallelism.
+
+    Parameters
+    ----------
+    general_path : str
+        Project root containing `pharokka_results` and where outputs are written.
+    model_path : str
+        Path to the fine-tuned sequence-classifier model directory (HF transformers
+        format) used by PhageRBPdetect_v4.
+    data_suffix : str, optional
+        Suffix appended to the output filename (default '').
+    gpu_index : int, optional
+        CUDA device index to expose via CUDA_VISIBLE_DEVICES (default: 0).
+    threads : int, optional
+        Number of CPU threads to use when running on CPU (default: 16).
+    add : bool, optional
+        If True, append new predictions to existing `RBPbase{data_suffix}.csv`.
+
+    Returns
+    -------
+    None
+        Writes `RBPbase{data_suffix}.csv` into `general_path`.
+
+    Raises
+    ------
+    FileNotFoundError
+        If no `phage_genes{data_suffix}.csv` exists in `general_path`.
+
+    Notes
+    -----
+    - The function expects Pharokka results to contain `phanotate.faa` files with
+      protein FASTA records for each phage subdirectory.
+    - The `model_path` should point to a transformers-compatible model directory
+      (the function uses `AutoTokenizer` and `AutoModelForSequenceClassification`).
+    - If your model requires `trust_remote_code=True` you should adjust the loader,
+      or pre-import the custom model class into the environment.
+
+    Example
+    -------
+    process_and_detect_rbps_v4('/proj', 'RBPdetect_v4_ESMfine', data_suffix='_inference')
     """
     # Setup device
     os.environ["CUDA_VISIBLE_DEVICES"] = str(gpu_index)
@@ -403,8 +631,7 @@ def process_and_detect_rbps_v4(
         trust_remote_code=True
     )
     model = AutoModelForSequenceClassification.from_pretrained(
-        model_path,
-        trust_remote_code=True
+        model_path #, trust_remote_code=True
     ).to(device).eval()
 
     # Define directories
@@ -499,16 +726,68 @@ def run_bakta_and_extract_receptors(
     training=True
 ):
     """
-    Run Bakta on bacterial genome files, extract receptor proteins, and save as JSON.
+    Run Bakta on bacterial genome files and extract putative receptor proteins.
 
-    Parameters:
-    - bacteria_path: Path containing Serratia genome .fasta files.
-    - bakta_results_path: Path to save Bakta results.
-    - db_path: Path to the Bakta database.
-    - gene_keywords: List of keywords to filter receptor-related genes matching the 'Gene' column (substring matching).
-    - product_keywords: List of keywords to filter receptor-related genes matching the 'Product' column (advanced matching).
-    - data_suffix: Optional suffix for the output JSON file.
-    - training: Boolean indicating whether to run Bakta in training mode.
+    This wrapper runs Bakta on every `*.fasta` in `bacteria_path` (unless a per-genome
+    `bakta_results/<genome_name>` folder already exists), then parses the Bakta TSV
+    output to filter genes likely involved in surface structures using `gene_keywords`
+    and `product_keywords`. Two JSON files are produced:
+      - Bact_receptors{data_suffix}.json : minimal map {accession: [protein sequences]}
+      - Bact_receptors_verbose{data_suffix}.json : detailed list with locus tag, product,
+        DbXrefs and protein sequence for each selected gene.
+
+    Keyword rules
+    -------------
+    - Gene keywords are matched against the `Gene` column using substring matching.
+    - Product keywords support three modes:
+        * multi-word exact-match where all words must be present (order and adjacency
+          not required),
+        * prefix/suffix indicators using a trailing `-` or leading `-` in the keyword
+          (e.g. `-porin` matches any token ending with 'porin'),
+        * simple whole-word presence otherwise.
+
+    Parameters
+    ----------
+    bacteria_path : str
+        Directory with bacterial FASTA files to annotate with Bakta.
+    bakta_results_path : str
+        Directory where Bakta will write per-genome results (and from which results
+        will be read).
+    db_path : str
+        Path to the Bakta database (passed with `--db`).
+    gene_keywords : list[str]
+        List of keywords to search in the Bakta `Gene` column (substring matching).
+    product_keywords : list[str]
+        List of keywords for the Bakta `Product` column. Supports the advanced rules
+        described above (prefix/suffix/multi-word).
+    data_suffix : str, optional
+        Optional suffix for output files (default '').
+    threads : int or None, optional
+        Number of threads to use when invoking Bakta. If None the system CPU count
+        is used.
+    training : bool, optional
+        If True, Bakta is run with many annotation steps skipped (faster) suitable
+        for training pipelines. If False, Bakta is run with defaults.
+
+    Returns
+    -------
+    None
+        Writes two JSON files into `bakta_results_path`: the minimal receptor dict
+        and the verbose receptor metadata dict.
+
+    Notes
+    -----
+    - Bakta must be installed and available on PATH or provided as a wrapper command.
+    - If a `bakta_results/<genome_name>` directory already exists the function will
+      skip running Bakta for that genome and proceed to parse the existing outputs.
+    - The function expects Bakta to produce a `<genome_name>.tsv` and
+      `<genome_name>.faa` in the per-genome results folder.
+
+    Example
+    -------
+    run_bakta_and_extract_receptors(
+        "./data/bacteria_genomes", "./data/bakta_results", "/opt/bakta_db",
+        gene_keywords=["waaL"], product_keywords=["-porin", "outer membrane"])
     """
     os.makedirs(bakta_results_path, exist_ok=True)
 
@@ -552,36 +831,40 @@ def run_bakta_and_extract_receptors(
         tsv_file = os.path.join(output_path, f"{genome_name}.tsv")
         faa_file = os.path.join(output_path, f"{genome_name}.faa")
         
-        # Run Bakta
-        bakta_command = [
-            "bakta",
-            "--db", db_path,
-            "--output", output_path,
-            "--force",
-            "--threads", str(max_threads),
-        ]
-        if training:
-            bakta_command.extend([
-                "--skip-trna", "--skip-tmrna", "--skip-rrna",
-                "--skip-ncrna", "--skip-ncrna-region", "--skip-crispr", "--skip-pseudo",
-                "--skip-sorf", "--skip-gap", "--skip-plot"
-            ])
-        bakta_command.append(genome_path)
-        cmd = ' '.join(bakta_command)
+        if not os.path.exists(output_path):
+            # Run Bakta
+            bakta_command = [
+                #"apptainer run /stornext/GL_CARPACCIO/home/HPC/opt/singularity/bakta-1.11.0.sif",
+                "bakta",
+                "--db", db_path,
+                "--output", output_path,
+                "--force",
+                "--threads", str(max_threads),
+            ]
+            if training:
+                bakta_command.extend([
+                    "--skip-trna", "--skip-tmrna", "--skip-rrna",
+                    "--skip-ncrna", "--skip-ncrna-region", "--skip-crispr", "--skip-pseudo",
+                    "--skip-sorf", "--skip-gap", "--skip-plot"
+                ])
+            bakta_command.append(genome_path)
+            cmd = ' '.join(bakta_command)
 
-        print("Command:", cmd)
+            print("Command:", cmd)
 
-        process = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, 
-                                   text=True, bufsize=1)
+            process = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, 
+                                    text=True, bufsize=1)
 
-        # Print Bakta output in real time
-        for line in iter(process.stdout.readline, ''):
-            print(line, end='')
-            sys.stdout.flush()
-        process.stdout.close()
-        retcode = process.wait()
-        if retcode != 0:
-            raise subprocess.CalledProcessError(retcode, cmd)
+            # Print Bakta output in real time
+            for line in iter(process.stdout.readline, ''):
+                print(line, end='')
+                sys.stdout.flush()
+            process.stdout.close()
+            retcode = process.wait()
+            if retcode != 0:
+                raise subprocess.CalledProcessError(retcode, cmd)
+        else:
+            print(f"Skipping Bakta for {genome_name}: output already exists.")
 
         # Parse the .tsv file to filter receptor-related genes
         if not os.path.exists(tsv_file):

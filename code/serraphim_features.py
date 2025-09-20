@@ -1,16 +1,57 @@
 """
+SerraPHIM — FEATURE CONSTRUCTION
+================================
+
 Created on 17.07.2025
+Author: snt (based on PhageHostLearn by @dimiboeckaerts)
 
-@author: snt 
-based on PhageHostLearn by @dimiboeckaerts
+This module contains functions to construct feature representations used by the
+SerraPHIM pipeline. Specifically, it provides utilities to:
 
-SerraPHIM FEATURE CONSTRUCTION
+- compute ESM-2 protein embeddings for phage RBPs (batched and efficient),
+- compute ESM-2 embeddings for bacterial receptor candidate proteins (from Bakta output),
+- construct labelled training feature matrices using receptor ↔ phage interaction data,
+- construct inference-only feature matrices pairing every receptor with every phage.
+
+Intended use
+------------
+Embeddings generated here are consumed by downstream modeling code (XGBoost,
+cross-validation and inference). Embeddings are saved to CSV files for
+reproducibility and to allow large-scale workflows to be resumed.
+
+Important notes / caveats
+-------------------------
+- The ESM-2 ("t33_650M_UR50D") model used here is large — embedding memory
+  usage grows approximately quadratically with sequence length. The functions
+  include mechanisms to skip or handle very long protein sequences (parameter
+  `skip_long_seq` and `MAX_SEQ_LEN`).
+- Batching is applied to improve throughput; adjust `batch_size` to match
+  available RAM/GPUs/CPUs.
+- The functions expect the JSON produced by the Bakta wrapper:
+    `Bact_receptors{data_suffix}.json`
+  to exist when computing receptor embeddings.
+- These functions assume a simple CSV structure for RBP embeddings and receptor
+  embeddings; downstream feature construction concatenates receptor and phage
+  vectors in a fixed order.
+
+Dependencies
+------------
+- Python 3.8+
+- pandas
+- numpy
+- torch
+- esm (esm-2 pretrained utilities)
+- tqdm
+
+License / contribution
+----------------------
+Add LICENSE and contribution guidelines in the repo root when publishing.
+
 """
 
 # 0 - LIBRARIES
 # --------------------------------------------------
 import os
-import math
 import json
 import numpy as np
 import pandas as pd
@@ -18,7 +59,6 @@ import torch
 import esm
 from tqdm import tqdm
 from itertools import product
-import random
 
 
 # 1 - FUNCTIONS
@@ -30,18 +70,53 @@ def compute_esm2_embeddings_rbp_improved(
     add=False
 ):
     """
-    Computes ESM-2 embeddings for RBPs using batch processing to improve runtime.
-    
-    Parameters:
-    - general_path: Path to the project data folder.
-    - data_suffix: Optional suffix to append to saved file name (default='').
-    - batch_size: Number of sequences processed per batch (default=16).
-    - add: Whether to append new embeddings to an existing file (default=False).
-    
-    Output:
-    - Saves esm2_embeddings_rbp.csv with embeddings for each protein.
-    """
+    Compute ESM-2 embeddings for phage Receptor Binding Proteins (RBPs).
 
+    This function loads the RBPs listed in `RBPbase{data_suffix}.csv` (expected
+    to contain at least the columns: ['phage_ID', 'protein_ID', 'protein_sequence'])
+    and computes fixed-length sequence embeddings using the ESM-2 pretrained
+    model `esm2_t33_650M_UR50D`. Embeddings are computed in batches for
+    efficiency and written to:
+        {general_path}/esm2_embeddings_rbp{data_suffix}.csv
+
+    The saved CSV contains:
+      - 'phage_ID' : phage identifier (string)
+      - 'protein_ID' : protein identifier (string)
+      - <embedding columns> : numeric embedding vector columns (one column per dimension)
+
+    Parameters
+    ----------
+    general_path : str
+        Root path where `RBPbase{data_suffix}.csv` is read and embedding CSV is written.
+    data_suffix : str, optional
+        Suffix appended to input/output filenames (e.g. '_inference'). Default: ''.
+    batch_size : int, optional
+        Number of sequences sent to the model at once (adjust to the available
+        memory). Larger batches increase throughput but require more RAM. Default: 16.
+    add : bool, optional
+        If True and a previous embeddings CSV exists, the function will append
+        embeddings only for RBPs not already processed (determined by 'protein_ID').
+        Default: False.
+
+    Returns
+    -------
+    None
+        Writes embeddings CSV to disk.
+
+    Notes
+    -----
+    - The function uses `esm.pretrained.esm2_t33_650M_UR50D()` to load the model
+      and the corresponding batch converter.
+    - Embeddings are computed as the mean of the residue representations for each
+      sequence (`representations[33]`, mean over residues).
+    - If GPU(s) are available and PyTorch is configured to use them, ESM will
+      use the GPU automatically; if running on CPU, lower the `batch_size`.
+    - The embedding CSV may be large; store and handle with care.
+
+    Example
+    -------
+    compute_esm2_embeddings_rbp_improved('/project/data', data_suffix='_v1', batch_size=32)
+    """
     # Load the ESM-2 model
     model, alphabet = esm.pretrained.esm2_t33_650M_UR50D()
     batch_converter = alphabet.get_batch_converter()
@@ -108,22 +183,63 @@ def compute_esm2_embeddings_receptors(
     add=False
 ):
     """
-    Compute ESM-2 embeddings for bacterial receptors using the receptor protein sequences from
-    the Bact_receptors{data_suffix}.json file.
+    Compute ESM-2 embeddings for bacterial receptor candidate proteins.
 
-    Parameters:
-    - general_path: Path to the project data folder.
-    - bakta_results_path: Path where Bakta results are stored.
-    - data_suffix: Optional suffix to append to file names (default='').
-    - batch_size: Number of sequences processed per batch (default=16).
-    - aggregate_by_accession: If True, averages all receptor embeddings per accession.
-    - skip_long_seq: If True, skip sequences longer than MAX_SEQ_LEN, otherwise process them solo.
-    - add: Whether to append new embeddings to an existing file (default=False).
+    This function loads receptor protein sequences from the Bakta-derived JSON:
+        {bakta_results_path}/Bact_receptors{data_suffix}.json
+    The JSON is expected to map accession -> [protein sequences]. The function
+    computes per-protein ESM-2 embeddings and either saves one row per protein
+    or averages embeddings per accession (control via `aggregate_by_accession`).
 
-    Output:
-    - Saves esm2_embeddings_receptors.csv with embeddings for each protein.
+    Output is saved to:
+        {general_path}/esm2_embeddings_receptors{data_suffix}.csv
+
+    Parameters
+    ----------
+    general_path : str
+        Root path where the output CSV will be written (used for naming).
+    bakta_results_path : str
+        Directory where `Bact_receptors{data_suffix}.json` is located.
+    data_suffix : str, optional
+        Suffix appended to input/output filenames (default '').
+    batch_size : int, optional
+        Number of sequences processed per batch for normal-length sequences.
+        Default: 16.
+    aggregate_by_accession : bool, optional
+        If True, average all receptor embeddings for a given accession and produce
+        one row per accession. If False, keep one row per protein with columns:
+            ['accession', 'protein_ID', <embedding columns>]
+        Default: False.
+    skip_long_seq : bool, optional
+        If True, skip sequences longer than MAX_SEQ_LEN (1500 aa) and record them
+        in `{general_path}/skipped_long_sequences{data_suffix}.csv`. If False, long
+        sequences are processed solo (batch size = 1). Default: True.
+    add : bool, optional
+        If True and a previous embeddings CSV exists, new embeddings are appended
+        keeping previously computed rows. Default: False.
+
+    Returns
+    -------
+    None
+        Writes embeddings CSV to disk. Also writes a CSV of skipped long sequences
+        if any were skipped.
+
+    Notes
+    -----
+    - The function uses `esm.pretrained.esm2_t33_650M_UR50D()` and the residue
+      mean pooling strategy (`representations[33]`).
+    - ESM-2 memory scales strongly with sequence length; use `skip_long_seq=True`
+      to avoid OOM on typical machines. On large-memory servers set
+      `skip_long_seq=False` and ensure appropriate batching.
+    - When `aggregate_by_accession=True` the resulting CSV contains a column
+      'accession' and averaged embedding columns; otherwise it contains both
+      'accession' and 'protein_ID' as identifiers.
+
+    Example
+    -------
+    compute_esm2_embeddings_receptors('/proj', '/proj/bakta_results', data_suffix='_v1',
+                                     batch_size=32, aggregate_by_accession=True)
     """
-
     # Load the ESM-2 model
     model, alphabet = esm.pretrained.esm2_t33_650M_UR50D()
     batch_converter = alphabet.get_batch_converter()
@@ -236,17 +352,47 @@ def construct_feature_matrices_receptors(
     rbp_embeddings_path
 ):
     """
-    Construct feature matrices from full interaction matrix (1s and 0s) at species-level.
+    Build training feature matrices by pairing receptor embeddings with phage embeddings.
 
-    Assumes:
-    - receptor_embeddings: per receptor protein with 'accession' column.
-    - rbp_embeddings: per RBP protein with 'phage_ID' and 'protein_ID' columns.
-    - interaction matrix contains binary 1s and 0s only.
+    This function expects:
+      - receptor_embeddings_path -> CSV with per-protein or per-accession receptor embeddings
+        (column 'accession' + embedding columns if per-protein; if per-protein, the index
+        order should match the accession/protein pairs),
+      - rbp_embeddings_path -> CSV with per-RBP embeddings containing 'phage_ID' and 'protein_ID'
+        columns.
 
-    Returns:
-    - features, labels, groups_receptors, groups_phage
+    The function averages RBP embeddings per phage (to produce a single phage vector) and
+    then iterates over every receptor accession × phage pair. If an interaction matrix
+    `{interaction_path}/phage_host_interactions{data_suffix}.csv` is present, pairs for which
+    an interaction is recorded (0/1) are added to the feature list. Returned outputs:
+        features : numpy.ndarray shape (N_pairs, dim_receptor+dim_rbp)
+        labels : numpy.ndarray shape (N_pairs,) with values {0,1}
+        groups_receptors : list of accession identifiers (one per row in `features`)
+        groups_phage : list of phage identifiers (one per row in `features`)
+
+    Parameters
+    ----------
+    interaction_path : str
+        Directory or path prefix where `phage_host_interactions{data_suffix}.csv` is located.
+    data_suffix : str
+        Suffix used to find the interaction CSV (e.g. '_inference' or '').
+    receptor_embeddings_path : str
+        CSV path to receptor embeddings (as produced by compute_esm2_embeddings_receptors).
+    rbp_embeddings_path : str
+        CSV path to RBP embeddings (as produced by compute_esm2_embeddings_rbp_improved).
+
+    Returns
+    -------
+    tuple
+        (features, labels, groups_receptors, groups_phage)
+
+    Notes
+    -----
+    - The interaction CSV must contain rows indexed by accession and columns by phage ID,
+      with values 0 or 1.
+    - The function uses tqdm to report progress; building the full pairwise matrix can
+      be costly for large receptor × phage counts.
     """
-
     # Load data
     receptor_embeddings = pd.read_csv(receptor_embeddings_path)
     RBP_embeddings = pd.read_csv(rbp_embeddings_path)
@@ -291,4 +437,63 @@ def construct_feature_matrices_receptors(
             groups_phage.append(phage_id)
 
     return np.array(features), np.array(labels), groups_receptors, groups_phage
+
+
+def construct_feature_matrices_inference(
+    receptor_embeddings_path, 
+    rbp_embeddings_path
+):
+    """
+    Build inference-only feature matrix pairing every receptor accession with every phage.
+
+    This helper constructs the complete pairwise (host receptor accession × phage)
+    feature set using the receptor embeddings and the averaged-per-phage RBP embeddings.
+    No labels are required or returned.
+
+    Returns
+    -------
+    features : numpy.ndarray
+        Array of concatenated receptor + phage embedding vectors (one row per pair).
+    groups_hosts : list[str]
+        Host accession identifiers per row (repeated for each phage).
+    groups_phages : list[str]
+        Phage identifiers per row (repeated per host).
+
+    Example
+    -------
+    features, groups_hosts, groups_phages = construct_feature_matrices_inference(
+        'data/esm2_embeddings_receptors.csv',
+        'data/esm2_embeddings_rbp.csv'
+    )
+    """
+    receptor_embeddings = pd.read_csv(receptor_embeddings_path)
+    RBP_embeddings = pd.read_csv(rbp_embeddings_path)
+
+    # Average RBP embeddings per phage
+    phage_ids = []
+    avg_rbps = []
+    for phage_id in set(RBP_embeddings['phage_ID']):
+        subset = RBP_embeddings[RBP_embeddings['phage_ID'] == phage_id].iloc[:, 2:]
+        avg_rbps.append(np.mean(subset.values, axis=0))
+        phage_ids.append(phage_id)
+    rbp_df = pd.concat([pd.DataFrame({'phage_ID': phage_ids}), pd.DataFrame(avg_rbps)], axis=1)
+
+    # Construct features
+    features = []
+    groups_hosts = []
+    groups_phages = []
+
+    accessions = receptor_embeddings['accession']
+    phage_ids = rbp_df['phage_ID']
+
+    for i, acc in enumerate(accessions):
+        receptor_emb = receptor_embeddings.iloc[i, 1:].values  # skip 'accession'
+        for j, phage_id in enumerate(phage_ids):
+            rbp_emb = rbp_df.iloc[j, 1:].values  # skip 'phage_ID'
+            combined = np.concatenate([receptor_emb, rbp_emb])
+            features.append(combined)
+            groups_hosts.append(acc)
+            groups_phages.append(phage_id)
+
+    return np.array(features), groups_hosts, groups_phages
 
