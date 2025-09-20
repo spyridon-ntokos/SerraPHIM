@@ -1,0 +1,157 @@
+Phage_ID	Length	GC_content	Taxonomy	Completeness	Host	Lifestyle	Cluster	Subcluster
+AJ550635.1	4554	41.04084321475626	Microviridae	High-quality	Chlamydophila pecorum	virulent	cluster_152500	subcluster_191945
+AJ969242.1	7878	23.01345519167301		Not-determined	Spiroplasma citri	virulent	cluster_24190	subcluster_30305
+FQ482084.1	45522	49.681472694521325	Caudovirales	High-quality	Erwinia amylovora	virulent	cluster_223352	subcluster_281280
+FR725450.1	23750	52.985263157894735	Caudovirales	Medium-quality	Nitrososphaera viennensis EN76	virulent	cluster_67564	subcluster_85097
+AJ536073.2	14931	39.72942200790302		High-quality	Bacillus thuringiensis serovar israelensis	temperate	cluster_26036	subcluster_32746
+HE983844.1	45469	52.00026391607469	Caudovirales	High-quality	Pseudomonas aeruginosa	virulent	cluster_262131	subcluster_328975
+HG428758.1	41143	48.17587438932504	Caudovirales	High-quality	Brucella sp.	virulent	cluster_78863	subcluster_99184
+LN610575.1	93503	49.205907831834274	Caudovirales	Complete	Pseudomonas aeruginosa	virulent	cluster_233893	subcluster_294327
+LN610576.1	83598	54.59101892389771	Caudovirales	Complete	Pseudomonas aeruginosa	virulent	cluster_233205	subcluster_293532
+LN610581.1	86668	54.55877601883048	Caudovirales	Complete	Pseudomonas aeruginosa	virulent	cluster_268360	subcluster_336849
+LN610582.1	84759	54.59833174058212	Caudovirales	Complete	Pseudomonas aeruginosa	virulent	cluster_268360	subcluster_336850
+LN610583.1	85783	54.52478929391605	Caudovirales	Complete	Pseudomonas aeruginosa	virulent	cluster_268360	subcluster_336851
+LN610585.1	57745	63.47562559528963	Caudovirales	High-quality	Pseudomonas aeruginosa	temperate	cluster_186886	subcluster_235723
+LN610586.1	93053	49.25150183228912	Caudovirales	Complete	Pseudomonas aeruginosa	virulent	cluster_229453	subcluster_288795
+LN610587.1	93308	49.34625112530544	Caudovirales	Complete	Pseudomonas aeruginosa	virulent	cluster_177538	subcluster_224094
+LN610588.1	66326	55.64032204565329	Caudovirales	High-quality	Pseudomonas aeruginosa	virulent	cluster_11026	subcluster_13686
+LN681534.1	44129	28.502798613156884	Caudovirales	High-quality	Clostridium difficile	temperate	cluster_113235	subcluster_142792
+HG796219.1	42492	61.757507295490925	Caudovirales	High-quality	Burkholderia pseudomallei	virulent	cluster_268361	subcluster_336853
+HG796220.1	41882	61.77355427152476	Caudovirales	High-quality	Burkholderia pseudomallei	virulent	cluster_268361	subcluster_336855
+HG796221.1	42112	61.785239361702125	Caudovirales	High-quality	Burkholderia pseudomallei	virulent	cluster_177539	subcluster_224095
+LR031359.1	141133	35.78893667675172	Caudovirales	High-quality	Enterococcus	virulent	cluster_152445	subcluster_191880
+X15031.1	3575	51.38461538461539	Riboviria	High-quality	Escherichia coli	virulent	cluster_250815	subcluster_315178
+X60322.1	6087	45.178248726794806	Microviridae	High-quality	Escherichia coli	virulent	cluster_158413	subcluster_199459
+X52107.1	7349	61.49135936862158	Inoviridae	Low-quality	Pseudomonas aeruginosa	temperate	cluster_67555	subcluster_85085
+X14336.1	6744	42.71945432977461	Inoviridae	Medium-quality	Escherichia coli	virulent	cluster_63254	subcluster_79716
+X02139.1	6883	40.54917913700422	Inoviridae	Medium-quality	Escherichia coli	virulent	cluster_215731	subcluster_271768
+X03869.1	3466	47.86497403346797	Riboviria	High-quality	Escherichia coli	virulent	cluster_68527	subcluster_86650
+V00642.1	3569	52.115438498178754	Riboviria	High-quality	Escherichia coli	virulent	cluster_110885	subcluster_139791
+X07489.1	4276	50.25724976613658	Riboviria	High-quality	Escherichia coli	virulent	cluster_39628	subcluster_49797
+V00657.1	5577	45.68764568764569	Microviridae	High-quality	Escherichia coli	virulent	cluster_177517	subcluster_224073
+Z18946.1	52297	62.25787330057173	Caudovirales	High-quality	Mycobacterium	temperate	cluster_272329	subcluster_342024
+X58839.1	4491	33.28879982186596		Not-determined	Staphylococcus aureus	virulent	cluster_229441	subcluster_288779
+X51344.1	8273	22.8937507554696		High-quality	Spiroplasma citri	virulent	cluster_64617	subcluster_81506
+V01146.1	39937	48.39872799659464	Caudovirales	Complete	Escherichia coli	virulent	cluster_251005	subcluster_315408
+X51522.1	11624	49.526841018582246		High-quality	Escherichia coli	temperate	cluster_87300	subcluster_110169
+X80191.1	3588	54.20847268673356	Riboviria	High-quality	Pseudomonas aeruginosa	virulent	cluster_33704	subcluster_42337
+X99260.1	18630	37.65968867418143	Caudovirales	High-quality	Bacillus subtilis	virulent	cluster_141555	subcluster_178246
+X60323.1	6089	44.91706355723436	Microviridae	High-quality	Escherichia coli	virulent	cluster_158413	subcluster_199461
+X98106.1	42259	43.06064980240896	Caudovirales	High-quality	Lactiplantibacillus plantarum	virulent	cluster_174546	subcluster_220300
+Z47794.1	19343	38.830584707646175		Complete	Streptococcus pneumoniae	virulent	cluster_138008	subcluster_173892
+Y13918.1	35559	62.617058972412046	Caudovirales	High-quality	Pseudomonas aeruginosa	temperate	cluster_68522	subcluster_86642
+AJ131519.1	43785	35.57154276578737	Caudovirales	High-quality	Lactobacillus gasseri	virulent	cluster_119445	subcluster_150450
+AJ242593.1	40834	36.10716559729637	Caudovirales	High-quality	Listeria monocytogenes	temperate	cluster_110381	subcluster_139082
+AJ251805.1	39600	50.63131313131313	Caudovirales	Complete	Yersinia enterocolitica	virulent	cluster_217904	subcluster_274571
+AJ270057.1	4563	40.93797939951786	Microviridae	High-quality	Escherichia coli	virulent	cluster_152500	subcluster_191946
+X96987.2	21129	34.65379336457002		High-quality	Bacillus sp.	virulent	cluster_233870	subcluster_294304
+AX059140.1	129908	42.49391877328571	Caudovirales	High-quality	Parabacteroides merdae	virulent	cluster_247842	subcluster_311354
+AJ318471.1	38208	49.90054438860972	Caudovirales	Complete	Escherichia coli	virulent	cluster_113265	subcluster_142824
+AJ298298.1	42575	49.35055783910746	Caudovirales	High-quality	Escherichia coli	temperate	cluster_223543	subcluster_281501
+AJ302074.2	40248	38.41184655138144	Caudovirales	High-quality	Streptococcus pneumoniae	virulent	cluster_217468	subcluster_273921
+AJ312240.2	37618	34.725397416130576	Caudovirales	High-quality	Listeria monocytogenes	temperate	cluster_87301	subcluster_110170
+AJ505558.1	42519	62.296855523413065	Caudovirales	Complete	Pseudomonas aeruginosa	virulent	cluster_217423	subcluster_273875
+AJ550940.2	41831	62.76206641007865	Caudovirales	High-quality	Streptomyces	virulent	cluster_79805	subcluster_100343
+AJ556162.1	57930	50.607629898152936	Caudovirales	High-quality	Escherichia coli	temperate	cluster_22522	subcluster_28215
+V00604.2	6407	40.73669424067427	Inoviridae	High-quality	Escherichia coli	virulent	cluster_269726	subcluster_338485
+AJ630128.1	196280	37.8204605665376	Caudovirales	High-quality	Synechococcus sp.	virulent	cluster_67557	subcluster_85087
+AM040673.1	6907	62.38598523237295	Inoviridae	High-quality	Stenotrophomonas maltophilia	temperate	cluster_174549	subcluster_220304
+AJ842011.2	36012	30.592580251027435	Caudovirales	Medium-quality	Flavobacterium sp.	virulent	cluster_17499	subcluster_21967
+AM156909.1	46219	44.282654319652096	Caudovirales	High-quality	Escherichia coli	virulent	cluster_273762	subcluster_343881
+AJ697969.1	211215	49.32698908694932	Caudovirales	High-quality	Pseudomonas aeruginosa	virulent	cluster_152501	subcluster_191947
+AM084414.1	39699	49.7770724703393	Caudovirales	Complete	Escherichia coli	virulent	cluster_156850	subcluster_197341
+AM084415.1	45251	45.05314799672935	Caudovirales	Complete	Escherichia coli	virulent	cluster_215734	subcluster_271771
+X97918.2	44010	43.71506475800954	Caudovirales	High-quality	Bacillus subtilis	virulent	cluster_228691	subcluster_287854
+AM265638.1	43200	62.31712962962963	Caudovirales	Complete	Pseudomonas aeruginosa	virulent	cluster_48784	subcluster_61304
+AM265639.1	41593	60.90207486836727	Caudovirales	Complete	Pseudomonas aeruginosa	virulent	cluster_39603	subcluster_49769
+AM183667.1	38564	47.18908826885178	Caudovirales	Complete	Yersinia pestis	virulent	cluster_68530	subcluster_86653
+AM910650.1	45625	52.24767123287671	Caudovirales	Complete	Pseudomonas aeruginosa	virulent	cluster_138010	subcluster_173894
+AM910651.1	43548	62.27840543767796	Caudovirales	Complete	Pseudomonas aeruginosa	virulent	cluster_268436	subcluster_336935
+AM749441.1	58663	64.26197091863696	Caudovirales	High-quality	Pseudomonas aeruginosa	temperate	cluster_228692	subcluster_287855
+CU468217.1	62337	63.93153343920945	Caudovirales	High-quality	Azospirillum brasilense	temperate	cluster_113214	subcluster_142765
+AM491472.1	45051	46.12550220860802	Caudovirales	High-quality	Salmonella enterica	virulent	cluster_68526	subcluster_86648
+FM163528.1	39136	40.50746116107931	Caudovirales	High-quality	Streptococcus gordonii	temperate	cluster_67560	subcluster_85092
+FM201281.1	64427	55.468980396417656	Caudovirales	High-quality	Pseudomonas aeruginosa	virulent	cluster_11026	subcluster_13688
+FM201282.1	66530	55.61701488050503	Caudovirales	High-quality	Pseudomonas aeruginosa	virulent	cluster_79808	subcluster_100346
+FM180578.1	57248	51.05331190609279	Caudovirales	High-quality	Escherichia coli	temperate	cluster_138011	subcluster_173895
+FM897211.1	66235	55.592964444779945	Caudovirales	High-quality	Pseudomonas aeruginosa	virulent	cluster_18012	subcluster_22666
+FM887021.1	66390	55.58216598885374	Caudovirales	High-quality	Pseudomonas aeruginosa	virulent	cluster_18012	subcluster_22665
+FN263372.1	43152	62.86846496106785	Caudovirales	Complete	Pseudomonas aeruginosa	virulent	cluster_10723	subcluster_13312
+FN391954.1	31276	39.49034403376391	Caudovirales	High-quality	Streptococcus oralis	temperate	cluster_233876	subcluster_294310
+FM207411.1	194454	41.12026494697975	Caudovirales	High-quality	Synechococcus	virulent	cluster_217909	subcluster_274576
+FN422398.1	74901	53.21824808747547	Caudovirales	Complete	Pseudomonas aeruginosa	virulent	cluster_79810	subcluster_100349
+FN422399.1	72544	55.019022937803264	Caudovirales	Complete	Pseudomonas aeruginosa	virulent	cluster_55566	subcluster_69981
+FN594518.1	43144	58.91433339514185	Caudovirales	High-quality	Pseudomonas fluorescens	virulent	cluster_222383	subcluster_280160
+FN297812.1	42612	50.87768703651554	Caudovirales	High-quality	Vibrio parahaemolyticus	temperate	cluster_48803	subcluster_61331
+FN667788.1	177534	27.35926639404283	Caudovirales	High-quality	Campylobacter sp.	virulent	cluster_33633	subcluster_42264
+FN667789.1	175720	27.33724106533121	Caudovirales	High-quality	Campylobacter sp.	virulent	cluster_39624	subcluster_49790
+AJ278322.4	42972	56.16215209904124	Caudovirales	High-quality	Gordonia terrae	virulent	cluster_72919	subcluster_91985
+FR667955.1	38368	48.92618849040867	Caudovirales	High-quality	Salmonella enterica	virulent	cluster_138012	subcluster_173896
+FQ312032.1	157061	45.220010059785686	Caudovirales	High-quality	Salmonella enterica	virulent	cluster_55567	subcluster_69982
+FR687252.1	44546	53.99137969739146	Caudovirales	High-quality	Pantoea agglomerans	virulent	cluster_262125	subcluster_328967
+FQ482083.1	84565	43.83018979483238	Caudovirales	High-quality	Erwinia amylovora	virulent	cluster_277501	subcluster_348627
+FQ482085.1	47279	47.32968125383363	Caudovirales	High-quality	Erwinia tasmaniensis	temperate	cluster_150329	subcluster_189456
+FQ482086.1	45554	49.67730605435308	Caudovirales	High-quality	Erwinia amylovora	virulent	cluster_223352	subcluster_281280
+FR823298.1	39562	58.164400181992825	Caudovirales	High-quality	Pseudomonas putida	virulent	cluster_273767	subcluster_343886
+FR751545.1	43032	55.35183119538948	Caudovirales	High-quality	Pantoea agglomerans	virulent	cluster_64220	subcluster_80986
+FR823450.1	132454	26.042248629712955	Caudovirales	High-quality	Campylobacter jejuni	virulent	cluster_119397	subcluster_150400
+FR852584.1	138339	30.421645378382088	Caudovirales	High-quality	Staphylococcus aureus	virulent	cluster_177564	subcluster_224121
+HE584812.1	36814	64.3641006138969	Caudovirales	High-quality	Pseudomonas aeruginosa	virulent	cluster_154639	subcluster_194562
+HE608841.1	47159	38.74976144532327	Caudovirales	High-quality	Bacteroides fragilis	virulent	cluster_119455	subcluster_150462
+HE600015.1	152427	49.27867110157649	Caudovirales	High-quality	Dickeya solani	virulent	cluster_177528	subcluster_224084
+HE775250.1	42391	49.78887027906867	Caudovirales	High-quality	Salmonella enterica	virulent	cluster_222398	subcluster_280182
+HE806280.1	46387	37.74333326147412	Caudovirales	High-quality	Acinetobacter baumannii	virulent	cluster_277684	subcluster_348853
+AJ006589.3	41491	63.618616085416114	Caudovirales	High-quality	Streptomyces	virulent	cluster_187184	subcluster_236129
+FR775895.2	148612	37.43439291578069	Caudovirales	Complete	Escherichia coli	virulent	cluster_22532	subcluster_28227
+HE614281.1	42784	35.6348167539267	Caudovirales	High-quality	Staphylococcus pasteuri	temperate	cluster_217915	subcluster_274582
+HE614282.1	42932	35.663374638963944	Caudovirales	High-quality	Bacillus thuringiensis	temperate	cluster_217915	subcluster_274583
+HE956709.1	168809	34.543774324828654	Caudovirales	High-quality	Yersinia enterocolitica	virulent	cluster_277685	subcluster_348854
+HE956711.1	167063	35.44171959081305	Caudovirales	High-quality	Yersinia pestis	virulent	cluster_161278	subcluster_202989
+HE611333.2	46271	53.20178945775972	Caudovirales	High-quality	Pseudomonas putida	virulent	cluster_186874	subcluster_235707
+HE981739.1	179839	43.16082718431486	Caudovirales	High-quality	Escherichia coli str. K-12 substr. W3110	virulent	cluster_110886	subcluster_139792
+HE983845.1	92777	49.27729933065307	Caudovirales	Complete	Pseudomonas aeruginosa	virulent	cluster_229453	subcluster_288795
+HE858210.2	179836	43.17100024466736	Caudovirales	High-quality	Escherichia coli str. K-12 substr. W3110	virulent	cluster_110886	subcluster_139793
+HF543949.1	44030	51.994094935271406	Caudovirales	High-quality	Pseudomonas aeruginosa	virulent	cluster_262131	subcluster_328975
+HE956704.1	36566	36.52026472679538	Caudovirales	High-quality	Lactobacillus helveticus	virulent	cluster_223362	subcluster_281292
+HE861935.1	45606	38.81945358066921	Caudovirales	High-quality	Streptococcus thermophilus	temperate	cluster_25771	subcluster_32403
+HG007973.1	7069	62.34262271891357	Inoviridae	High-quality	Stenotrophomonas maltophilia	virulent	cluster_48797	subcluster_61325
+HG315669.1	7648	62.63075313807531	Inoviridae	High-quality	Stenotrophomonas maltophilia	virulent	cluster_64228	subcluster_80994
+HE962497.1	58305	39.87308121087385	Caudovirales	High-quality	Streptococcus pneumoniae	virulent	cluster_78855	subcluster_99176
+HF563658.1	37375	38.341137123745824	Caudovirales	High-quality	Streptococcus pneumoniae	temperate	cluster_187108	subcluster_236028
+HG380752.1	41757	38.97789592164188	Caudovirales	High-quality	Streptococcus thermophilus	temperate	cluster_176257	subcluster_222452
+HG531932.1	17276	29.671220189858765	Lavidaviridae	High-quality	Clostridioides difficile	virulent	cluster_138026	subcluster_173913
+HG518155.1	45696	52.365633753501406	Caudovirales	High-quality	Pseudomonas aeruginosa	virulent	cluster_26047	subcluster_32759
+HG813241.1	38966	52.558640866396345	Caudovirales	High-quality	Cronobacter turicensis	virulent	cluster_217925	subcluster_274594
+HG818823.1	39207	50.49098375290127	Caudovirales	High-quality	Citrobacter rodentium	virulent	cluster_217488	subcluster_273944
+HG818824.1	39651	49.68096643212025	Caudovirales	Complete	Citrobacter rodentium	virulent	cluster_229458	subcluster_288800
+HG531805.1	54279	28.44562353764808	Caudovirales	High-quality	Clostridium	temperate	cluster_273779	subcluster_343898
+HG934470.1	42764	49.79188102141989	Caudovirales	High-quality	Salmonella enterica	virulent	cluster_222398	subcluster_280181
+HG962375.1	72028	54.89670683623036	Caudovirales	High-quality	Pseudomonas aeruginosa	virulent	cluster_233894	subcluster_294328
+HG803181.1	33828	48.17015490126522	Caudovirales	High-quality	Vibrio vulnificus	virulent	cluster_110403	subcluster_139104
+HG962376.1	43056	53.42577108881456	Caudovirales	High-quality	Pseudomonas aeruginosa	virulent	cluster_277695	subcluster_348864
+LK392619.1	19741	38.54414669976192		Complete	Streptococcus pneumoniae	virulent	cluster_187131	subcluster_236052
+HG796225.1	33596	29.98868912965829	Caudovirales	High-quality	Clostridium difficile	temperate	cluster_68550	subcluster_86676
+LK985321.1	32651	29.539677192122756	Caudovirales	High-quality	Clostridium difficile	temperate	cluster_161230	subcluster_202934
+LK985322.1	54295	28.24937839580072	Caudovirales	High-quality	Clostridium difficile	temperate	cluster_66165	subcluster_83367
+LN610572.1	93848	49.39689711022079	Caudovirales	Complete	Pseudomonas aeruginosa	virulent	cluster_222424	subcluster_280210
+LN610573.1	86246	54.67731836838809	Caudovirales	Complete	Pseudomonas aeruginosa	virulent	cluster_268360	subcluster_336852
+LN610574.1	43639	62.34560828616604	Caudovirales	Complete	Pseudomonas aeruginosa	virulent	cluster_110138	subcluster_138802
+LN610577.1	56537	63.49824009056017	Caudovirales	High-quality	Pseudomonas aeruginosa	temperate	cluster_222401	subcluster_280186
+LN610578.1	45808	52.35330073349633	Caudovirales	Complete	Pseudomonas aeruginosa	virulent	cluster_26168	subcluster_32908
+LN610579.1	66299	55.66750629722922	Caudovirales	High-quality	Pseudomonas aeruginosa	virulent	cluster_277521	subcluster_348655
+LN610580.1	42750	62.18011695906432	Caudovirales	High-quality	Pseudomonas aeruginosa	virulent	cluster_72936	subcluster_92003
+LN610584.1	58139	63.303462391854005	Caudovirales	High-quality	Pseudomonas aeruginosa	temperate	cluster_277697	subcluster_348866
+LN610589.1	66181	54.90246445354406	Caudovirales	High-quality	Pseudomonas aeruginosa	virulent	cluster_161232	subcluster_202937
+LN610590.1	37238	64.07970352865352	Caudovirales	High-quality	Pseudomonas aeruginosa	virulent	cluster_247850	subcluster_311363
+HG793132.1	42409	61.74868542054752	Caudovirales	High-quality	Burkholderia pseudomallei	virulent	cluster_268361	subcluster_336854
+LN681535.1	41560	30.892685274302213	Caudovirales	High-quality	Clostridium difficile	temperate	cluster_228710	subcluster_287876
+LN681536.1	41507	30.688799479605848	Caudovirales	High-quality	Clostridium difficile	temperate	cluster_15875	subcluster_19926
+LN681538.1	32846	30.250258783413503	Caudovirales	High-quality	Clostridium difficile	temperate	cluster_8070	subcluster_10029
+LN681539.1	49316	29.38397274718144	Caudovirales	High-quality	Clostridium difficile	temperate	cluster_55589	subcluster_70008
+LN681540.1	33274	29.61170884173829	Caudovirales	High-quality	Clostridium difficile	temperate	cluster_31227	subcluster_39214
+LN681541.1	44461	28.91972740154293	Caudovirales	Medium-quality	Clostridium difficile	temperate	cluster_156835	subcluster_197325
+LN681542.1	52261	28.870477028759492	Caudovirales	High-quality	Clostridium difficile	temperate	cluster_66167	subcluster_83369
+HE956708.2	122696	40.51232314011867	Caudovirales	Complete	Yersinia enterocolitica	virulent	cluster_24220	subcluster_30337
+HE956707.2	42085	51.845075442556734	Caudovirales	Complete	Yersinia enterocolitica	virulent	cluster_44487	subcluster_55840
+HE956710.2	42406	47.637126821676176	Caudovirales	Complete	Yersinia enterocolitica	virulent	cluster_44472	subcluster_55821
+LN681537.2	131704	26.415294903723503	Caudovirales	Complete	Clostridium difficile	temperate	cluster_161207	subcluster_202910

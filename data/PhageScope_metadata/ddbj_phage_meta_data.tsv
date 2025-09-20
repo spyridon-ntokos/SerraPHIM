@@ -1,0 +1,291 @@
+Phage_ID	Length	GC_content	Taxonomy	Completeness	Host	Lifestyle	Cluster	Subcluster
+AP004402.1	61765	49.3888124342265	Caudovirales	High-quality	Escherichia coli	temperate	cluster_158414	subcluster_199462
+AB626963.1	18186	29.214780600461893		Complete	Staphylococcus aureus	virulent	cluster_59781	subcluster_75447
+AB757801.1	41684	48.28231455714423	Caudovirales	High-quality	Edwardsiella tarda	virulent	cluster_25769	subcluster_32401
+AB746912.1	37159	40.6092736618316	Caudovirales	High-quality	Nitratiruptor sp.	temperate	cluster_268350	subcluster_336839
+AB910602.1	7325	58.17064846416382	Inoviridae	High-quality	Xanthomonas arboricola	temperate	cluster_273759	subcluster_343878
+AB981170.1	8956	59.669495310406425	Inoviridae	High-quality	Ralstonia solanacearum	virulent	cluster_177520	subcluster_224076
+AP018714.1	143638	35.964020663055734	Caudovirales	High-quality	Enterococcus	virulent	cluster_63292	subcluster_79757
+AP018715.1	143046	35.952770437481654	Caudovirales	High-quality	Enterococcus	virulent	cluster_229477	subcluster_288826
+LC513943.1	40248	34.930928244881734	Caudovirales	High-quality	Enterococcus faecalis	virulent	cluster_223304	subcluster_281230
+D00624.1	4877	36.497847037112976	Microviridae	High-quality	Pseudomonas aeruginosa	virulent	cluster_31200	subcluster_39185
+AB002632.1	8651	44.52664431857588	Inoviridae	High-quality	Vibrio cholerae	virulent	cluster_156819	subcluster_197308
+AB012573.1	7965	45.66227244193346	Inoviridae	Low-quality	Vibrio parahaemolyticus	virulent	cluster_17496	subcluster_21964
+AB012574.1	7965	45.67482736974263	Inoviridae	Low-quality	Vibrio parahaemolyticus	virulent	cluster_17496	subcluster_21964
+AB008550.1	35580	62.62225969645869	Caudovirales	Complete	Pseudomonas aeruginosa	temperate	cluster_68522	subcluster_86642
+AB016282.1	39325	42.69040050858233	Caudovirales	High-quality	Bacillus subtilis	temperate	cluster_159166	subcluster_200407
+AP000363.1	60942	49.91303206327328	Caudovirales	High-quality	Escherichia coli	temperate	cluster_152435	subcluster_191867
+AB009866.2	41401	33.55474505446728	Caudovirales	High-quality	Staphylococcus aureus	temperate	cluster_159203	subcluster_200446
+AB043678.1	8784	45.16165755919855	Inoviridae	Low-quality	Vibrio parahaemolyticus	virulent	cluster_174547	subcluster_220302
+AB043679.1	6891	47.23552459730082	Inoviridae	Low-quality	Vibrio parahaemolyticus	virulent	cluster_174547	subcluster_220301
+AP001553.1	43081	35.43093242960934	Caudovirales	High-quality	Staphylococcus aureus	temperate	cluster_179408	subcluster_226440
+AB044554.1	45636	33.47576474712946	Caudovirales	High-quality	Staphylococcus aureus	temperate	cluster_22568	subcluster_28270
+AP005153.1	59866	49.694317308656	Caudovirales	High-quality	Escherichia coli	temperate	cluster_33706	subcluster_42339
+AP005154.1	62706	49.901125889069625	Caudovirales	High-quality	Escherichia coli	temperate	cluster_33706	subcluster_42340
+AB102868.1	41391	47.43060085525839	Caudovirales	High-quality	Salmonella typhimurium	temperate	cluster_36689	subcluster_46174
+AB045978.2	42942	33.312374831167624	Caudovirales	Complete	Staphylococcus aureus	temperate	cluster_128934	subcluster_162298
+AP008983.1	185683	26.28404323497574	Caudovirales	Complete	Clostridium botulinum	temperate	cluster_223545	subcluster_281505
+AP008979.1	43785	51.07456891629554	Caudovirales	High-quality	Xanthomonas oryzae	virulent	cluster_222380	subcluster_280157
+AP008986.1	46643	60.88158994918852	Caudovirales	High-quality	Xanthomonas oryzae	virulent	cluster_26032	subcluster_32741
+AP009146.1	52162	50.82627199877305	Caudovirales	High-quality	Sodalis glossinidius	temperate	cluster_39602	subcluster_49768
+AB255436.1	60238	49.06703409807763	Caudovirales	High-quality	Escherichia coli	temperate	cluster_177518	subcluster_224074
+AB231700.1	162109	45.95303160219358	Caudovirales	High-quality	Marinomonas mediterranea	virulent	cluster_187109	subcluster_236029
+AB259124.1	6662	62.608826178324826	Inoviridae	Medium-quality	Ralstonia solanacearum	virulent	cluster_154655	subcluster_194581
+AB243556.1	44857	33.4685779254074	Caudovirales	High-quality	Staphylococcus aureus	temperate	cluster_110876	subcluster_139779
+AP008953.1	43265	34.27944065641974	Caudovirales	High-quality	Staphylococcus aureus	temperate	cluster_79116	subcluster_99507
+AP008954.1	43282	34.899034240561896	Caudovirales	High-quality	Staphylococcus aureus	temperate	cluster_115593	subcluster_145708
+AB276040.1	38760	65.34829721362229	Caudovirales	High-quality	Ralstonia solanacearum	temperate	cluster_217470	subcluster_273923
+AB285204.1	47021	49.11635226813552	Caudovirales	High-quality	Escherichia coli	temperate	cluster_67559	subcluster_85091
+AP009390.1	142072	35.73751337350076	Caudovirales	High-quality	Enterococcus faecalis	virulent	cluster_269717	subcluster_338472
+AB370268.1	43011	35.630420125084285	Caudovirales	High-quality	Staphylococcus aureus	temperate	cluster_8049	subcluster_10005
+AB374228.1	33507	48.83457188050258	Caudovirales	High-quality	Vibrio cholerae	virulent	cluster_186863	subcluster_235696
+AB362338.2	41660	47.01152184349496	Caudovirales	High-quality	Salmonella enterica	temperate	cluster_22525	subcluster_28218
+AB426868.1	41660	47.01152184349496	Caudovirales	High-quality	Salmonella enterica	temperate	cluster_79117	subcluster_99508
+AB370205.1	44342	34.326372288124126	Caudovirales	High-quality	Staphylococcus aureus	temperate	cluster_24192	subcluster_30308
+AB451219.1	43079	61.737737644792126	Caudovirales	High-quality	Ralstonia solanacearum	virulent	cluster_48785	subcluster_61305
+AP009624.1	46872	56.26386755419014	Caudovirales	High-quality	Pseudomonas aeruginosa	temperate	cluster_186869	subcluster_235702
+AB434711.1	8929	59.64833687982976	Inoviridae	High-quality	Ralstonia solanacearum	virulent	cluster_177520	subcluster_224076
+AB063393.2	19604	65.93552336257906		High-quality	Thermus thermophilus	virulent	cluster_64218	subcluster_80984
+AB366653.2	231255	58.02642105035567	Caudovirales	High-quality	Ralstonia solanacearum	virulent	cluster_177521	subcluster_224077
+AP011113.1	167435	35.33132260280109	Caudovirales	High-quality	Escherichia coli	virulent	cluster_266996	subcluster_335087
+AB572858.1	6856	43.43640606767794		High-quality	Vibrio cholerae	virulent	cluster_110374	subcluster_139075
+AB597179.1	40411	61.75051347405409	Caudovirales	Complete	Ralstonia solanacearum	virulent	cluster_33713	subcluster_42347
+AP011616.1	152372	32.5860394298165	Caudovirales	High-quality	Thermus thermophilus	virulent	cluster_269722	subcluster_338477
+AP011617.1	151483	32.62544311902985	Caudovirales	High-quality	Thermus thermophilus	virulent	cluster_26152	subcluster_32891
+AB472900.2	88322	54.79382260365481	Caudovirales	High-quality	Pseudomonas aeruginosa	virulent	cluster_39619	subcluster_49785
+AP011955.1	42461	33.3105673441511	Caudovirales	High-quality	Staphylococcus aureus	temperate	cluster_174725	subcluster_220555
+AP011956.1	42481	33.30900873331607	Caudovirales	High-quality	Staphylococcus aureus	temperate	cluster_174725	subcluster_220555
+AB609718.1	142072	35.736809505039695	Caudovirales	High-quality	Enterococcus faecalis	virulent	cluster_269717	subcluster_338472
+AB626962.1	18168	28.907970057243503		Complete	Staphylococcus aureus	virulent	cluster_64222	subcluster_80988
+AB712291.1	53996	40.44929254018817	Caudovirales	Complete	Enterococcus faecalis	virulent	cluster_269725	subcluster_338484
+AB647160.1	26215	35.76959755864963	Caudovirales	High-quality	Helicobacter pylori	temperate	cluster_159214	subcluster_200457
+AB731695.1	26449	35.94086732957768	Caudovirales	High-quality	Helicobacter pylori	temperate	cluster_26157	subcluster_32896
+AB560486.1	64144	55.62328510850586	Caudovirales	High-quality	Pseudomonas aeruginosa	virulent	cluster_79808	subcluster_100347
+AB757800.1	41549	48.27553009699391	Caudovirales	High-quality	Edwardsiella tarda	virulent	cluster_25769	subcluster_32400
+AB720064.1	42963	67.01813188092079	Caudovirales	High-quality	Xanthomonas citri	virulent	cluster_186877	subcluster_235710
+AB767244.1	42746	53.0997052355776	Caudovirales	High-quality	Edwardsiella tarda	virulent	cluster_64226	subcluster_80992
+AP012341.1	47252	33.04410395327182	Caudovirales	High-quality	Staphylococcus aureus	temperate	cluster_113223	subcluster_142776
+AB711120.1	50861	41.28507107607008	Caudovirales	High-quality	Bacillus subtilis	virulent	cluster_68535	subcluster_86659
+AP013057.1	43378	52.57042740559731	Caudovirales	High-quality	Edwardsiella ictaluri	virulent	cluster_64227	subcluster_80993
+AB720063.2	43870	53.30977889218145	Caudovirales	High-quality	Xanthomonas citri	virulent	cluster_64631	subcluster_81523
+AB259123.2	9004	59.95113282985339	Inoviridae	High-quality	Ralstonia solanacearum	virulent	cluster_44544	subcluster_55902
+AP013029.1	155631	42.11821552261439	Caudovirales	Complete	Bacillus subtilis	virulent	cluster_233887	subcluster_294321
+AB828698.1	8576	61.71875	Inoviridae	High-quality	Ralstonia solanacearum	virulent	cluster_233198	subcluster_293521
+AB823818.1	38099	44.68883697734849	Caudovirales	Medium-quality	Thermus thermophilus	virulent	cluster_113227	subcluster_142783
+AB797215.1	159991	46.70450212824471	Caudovirales	High-quality	Klebsiella pneumoniae	virulent	cluster_25776	subcluster_32408
+AB854109.1	44578	61.0323477948764	Caudovirales	Complete	Ralstonia solanacearum	virulent	cluster_273777	subcluster_343896
+AP013358.1	33328	30.514882381180996	Caudovirales	Complete	Agathobacter rectalis	virulent	cluster_269730	subcluster_338491
+AP013359.1	37910	38.99762595621208	Caudovirales	Complete	Pasteurella multocida	virulent	cluster_174564	subcluster_220320
+AP013360.1	39847	38.15343689612769	Caudovirales	Complete	Bacillus cereus	virulent	cluster_138021	subcluster_173908
+AP013361.1	43957	53.02682166662876	Caudovirales	Complete	Corynebacterium diphtheriae	temperate	cluster_129374	subcluster_162815
+AP013362.1	39365	46.22126254286803	Caudovirales	Complete	Salmonella enterica	virulent	cluster_8061	subcluster_10018
+AP013363.1	39568	46.29751314193288	Caudovirales	Complete	Salmonella enterica	virulent	cluster_8061	subcluster_10019
+AP013364.1	39662	46.263425949271344	Caudovirales	Complete	Salmonella enterica	virulent	cluster_8061	subcluster_10017
+AP013365.1	39568	46.28234937323089	Caudovirales	Complete	Salmonella enterica	virulent	cluster_8061	subcluster_10019
+AP013366.1	39473	46.20373419805943	Caudovirales	Complete	Salmonella enterica	virulent	cluster_262135	subcluster_328980
+AP013367.1	39425	43.83766645529487	Caudovirales	Complete	Prevotella copri	virulent	cluster_187123	subcluster_236044
+AP013368.1	35263	41.61302214786036	Caudovirales	Complete	Bacillus cereus	virulent	cluster_44546	subcluster_55904
+AP013369.1	41524	55.9676331759946	Caudovirales	Complete	Enterobacter cloacae	temperate	cluster_64230	subcluster_80996
+AP013370.1	30903	35.00307413519723	Caudovirales	Complete	Lawsonia intracellularis	virulent	cluster_78857	subcluster_99178
+AP013371.1	32391	35.7506714828193	Caudovirales	Complete	Parabacteroides merdae	virulent	cluster_223366	subcluster_281298
+AP013372.1	32431	35.71582744904567	Caudovirales	Complete	Parabacteroides merdae	virulent	cluster_79131	subcluster_99522
+AP013373.1	32222	35.76438458196263	Caudovirales	Complete	Bacillus cereus	virulent	cluster_223366	subcluster_281297
+AP013374.1	41867	34.91771562328325	Caudovirales	Complete	Lawsonia intracellularis	virulent	cluster_17512	subcluster_21980
+AP013375.1	42168	36.13403528742174	Caudovirales	Complete	Lawsonia intracellularis	virulent	cluster_154646	subcluster_194570
+AP013376.1	34433	35.08843260825371	Caudovirales	Complete	Lawsonia intracellularis	virulent	cluster_119462	subcluster_150470
+AP013377.1	40138	34.14968359160895	Caudovirales	Complete	Lawsonia intracellularis	virulent	cluster_110396	subcluster_139097
+AP013378.1	34514	37.51810859361419	Caudovirales	Complete	Enterococcus faecalis	virulent	cluster_152515	subcluster_191963
+AP013379.1	33989	33.528494512930656	Caudovirales	Complete	Lawsonia intracellularis	virulent	cluster_250830	subcluster_315193
+AP013380.1	34478	33.75485817042752	Caudovirales	Complete	Lawsonia intracellularis	virulent	cluster_217920	subcluster_274589
+AP013381.1	33690	35.176610270109826	Caudovirales	Complete	Lawsonia intracellularis	virulent	cluster_217483	subcluster_273937
+AP013382.1	41230	31.98641765704584	Caudovirales	Complete	Clostridioides difficile	virulent	cluster_27685	subcluster_34791
+AP013383.1	39751	33.958894115871296	Caudovirales	Complete	Lawsonia intracellularis	virulent	cluster_15359	subcluster_19246
+AP013384.1	35473	52.059312716714125	Caudovirales	Complete	Enterobacter cloacae	virulent	cluster_59801	subcluster_75474
+AP013385.1	36025	32.39972241498959	Caudovirales	Complete	Clostridioides difficile	virulent	cluster_87317	subcluster_110189
+AP013386.1	34952	32.66479743648432	Caudovirales	Complete	Candidatus Pelagibacter ubique	virulent	cluster_277514	subcluster_348648
+AP013387.1	34473	32.953325791198914	Caudovirales	Complete	Candidatus Pelagibacter ubique	virulent	cluster_72928	subcluster_91995
+AP013388.1	36799	34.56615668904046	Caudovirales	Complete	Candidatus Pelagibacter ubique	virulent	cluster_277688	subcluster_348857
+AP013389.1	36730	34.68826572284237	Caudovirales	Complete	Candidatus Pelagibacter ubique	virulent	cluster_161284	subcluster_202995
+AP013390.1	33823	35.93117109659107	Caudovirales	Complete	Lawsonia intracellularis	virulent	cluster_159219	subcluster_200462
+AP013391.1	34434	36.394261485740834	Caudovirales	Complete	Candidatus Pelagibacter ubique	virulent	cluster_269731	subcluster_338492
+AP013392.1	34445	36.39134852663667	Caudovirales	Complete	Candidatus Pelagibacter ubique	virulent	cluster_269731	subcluster_338492
+AP013393.1	39693	31.048295669261584	Caudovirales	Complete	Ruminococcaceae bacterium	virulent	cluster_174565	subcluster_220321
+AP013394.1	41207	41.62642269517315	Caudovirales	Complete	Enterobacter cloacae	virulent	cluster_138022	subcluster_173909
+AP013395.1	41059	41.85440463722935	Caudovirales	Complete	Enterobacter cloacae	virulent	cluster_129375	subcluster_162816
+AP013396.1	36966	33.67148190228859	Caudovirales	Complete	Candidatus Pelagibacter ubique	virulent	cluster_228701	subcluster_287864
+AP013397.1	34966	33.14362523594349	Caudovirales	Complete	Clostridioides difficile	virulent	cluster_8062	subcluster_10020
+AP013398.1	35951	32.4886651275347	Caudovirales	Complete	Candidatus Pelagibacter ubique	temperate	cluster_10734	subcluster_13327
+AP013399.1	35327	32.42845415687717	Caudovirales	Complete	Clostridioides difficile	temperate	cluster_262136	subcluster_328981
+AP013400.1	36021	34.37716887371256	Caudovirales	Complete	Candidatus Pelagibacter ubique	virulent	cluster_187124	subcluster_236045
+AP013401.1	35059	33.25251718531618	Caudovirales	Complete	Clostridioides difficile	virulent	cluster_44547	subcluster_55905
+AP013402.1	38437	31.5399224705362	Caudovirales	Complete	Clostridioides difficile	virulent	cluster_64231	subcluster_80997
+AP013403.1	42204	41.28992512558051	Caudovirales	Complete	Lawsonia intracellularis	virulent	cluster_78858	subcluster_99179
+AP013404.1	32527	45.99870876502598	Caudovirales	Complete	Vibrio parahaemolyticus	virulent	cluster_22537	subcluster_28233
+AP013405.1	35701	35.64886137643203	Caudovirales	Complete	Candidatus Pelagibacter ubique	virulent	cluster_79132	subcluster_99523
+AP013406.1	37654	34.69219737610878	Caudovirales	Complete	Candidatus Pelagibacter ubique	virulent	cluster_223367	subcluster_281299
+AP013407.1	33778	32.91491503345373	Caudovirales	Complete	Clostridioides difficile	virulent	cluster_17513	subcluster_21981
+AP013408.1	32954	33.86538811676883	Caudovirales	Complete	Lawsonia intracellularis	virulent	cluster_154647	subcluster_194571
+AP013409.1	33014	33.91894347852426	Caudovirales	Complete	Lawsonia intracellularis	virulent	cluster_154647	subcluster_194572
+AP013410.1	33517	34.42432198585792	Caudovirales	Complete	Lawsonia intracellularis	virulent	cluster_110397	subcluster_139098
+AP013411.1	35248	34.26861098502042	Caudovirales	Complete	Clostridioides difficile	virulent	cluster_199282	subcluster_251153
+AP013412.1	34630	33.222639330060645	Caudovirales	Complete	Clostridioides difficile	virulent	cluster_250831	subcluster_315194
+AP013413.1	38738	37.1392431204502	Caudovirales	Complete	Clostridioides difficile	virulent	cluster_217484	subcluster_273939
+AP013414.1	38744	37.09993805492464	Caudovirales	Complete	Clostridioides difficile	virulent	cluster_217484	subcluster_273938
+AP013415.1	38732	37.10110502943303	Caudovirales	Complete	Streptococcus agalactiae	virulent	cluster_217484	subcluster_273940
+AP013416.1	39033	37.17367355827121	Caudovirales	Complete	Clostridioides difficile	virulent	cluster_59802	subcluster_75476
+AP013417.1	39029	37.18004560711266	Caudovirales	Complete	Clostridioides difficile	virulent	cluster_59802	subcluster_75475
+AP013418.1	39355	37.02706136450261	Caudovirales	Complete	Clostridioides difficile	virulent	cluster_87318	subcluster_110190
+AP013419.1	39021	37.21073268240178	Caudovirales	Complete	Clostridioides difficile	virulent	cluster_277515	subcluster_348649
+AP013420.1	39355	37.00419260576801	Caudovirales	Complete	Streptococcus agalactiae	virulent	cluster_72929	subcluster_91996
+AP013421.1	33800	46.298816568047336	Caudovirales	Complete	Lawsonia intracellularis	virulent	cluster_277689	subcluster_348858
+AP013422.1	33654	32.66179354608665	Caudovirales	Complete	Clostridioides difficile	virulent	cluster_161285	subcluster_202996
+AP013423.1	33719	32.70856193837302	Caudovirales	Complete	Clostridioides difficile	virulent	cluster_159220	subcluster_200463
+AP013424.1	33380	35.15877771120432	Caudovirales	Complete	Clostridioides difficile	virulent	cluster_269732	subcluster_338493
+AP013425.1	32324	35.320504888008905	Caudovirales	Complete	Lawsonia intracellularis	virulent	cluster_174566	subcluster_220322
+AP013426.1	37925	32.25840474620962	Caudovirales	Complete	Clostridioides difficile	virulent	cluster_138023	subcluster_173910
+AP013427.1	37523	32.40412546971191	Caudovirales	Complete	Clostridioides difficile	virulent	cluster_129376	subcluster_162817
+AP013428.1	37260	32.426194310252285	Caudovirales	Complete	Lawsonia intracellularis	virulent	cluster_228702	subcluster_287865
+AP013429.1	36215	32.177274609968244	Caudovirales	Complete	Clostridioides difficile	virulent	cluster_8063	subcluster_10021
+AP013430.1	33980	32.38669805768099	Caudovirales	Complete	Lawsonia intracellularis	virulent	cluster_10735	subcluster_13328
+AP013431.1	33433	35.30942481978883	Caudovirales	Complete	Lawsonia intracellularis	virulent	cluster_262137	subcluster_328982
+AP013432.1	32358	37.13764756783485	Caudovirales	Complete	Lawsonia intracellularis	virulent	cluster_187125	subcluster_236046
+AP013433.1	33438	33.943417668520844	Caudovirales	Complete	Lawsonia intracellularis	virulent	cluster_44548	subcluster_55906
+AP013434.1	33848	33.98723705979674	Caudovirales	Complete	Clostridioides difficile	virulent	cluster_64232	subcluster_80998
+AP013435.1	32562	35.72876358946011	Caudovirales	Complete	Lawsonia intracellularis	virulent	cluster_78859	subcluster_99180
+AP013436.1	38286	32.607219349109336	Caudovirales	Complete	Clostridioides difficile	virulent	cluster_22538	subcluster_28234
+AP013437.1	38257	33.30893692657553	Caudovirales	Complete	Clostridioides difficile	virulent	cluster_79133	subcluster_99524
+AP013438.1	39689	33.92627680213661	Caudovirales	Complete	Lawsonia intracellularis	virulent	cluster_223368	subcluster_281300
+AP013439.1	35581	35.6426182513139	Caudovirales	Complete	Lawsonia intracellularis	virulent	cluster_17514	subcluster_21982
+AP013440.1	34607	33.565463634524804	Caudovirales	Complete	Clostridioides difficile	virulent	cluster_154648	subcluster_194573
+AP013441.1	36710	31.57450286025606	Caudovirales	Complete	Candidatus Pelagibacter ubique	virulent	cluster_119463	subcluster_150471
+AP013442.1	39860	32.39588559959859	Caudovirales	Complete	Clostridioides difficile	virulent	cluster_110398	subcluster_139099
+AP013443.1	39541	32.692648137376395	Caudovirales	Complete	Candidatus Pelagibacter ubique	virulent	cluster_199283	subcluster_251154
+AP013444.1	37952	32.072091062394605	Caudovirales	Complete	Candidatus Pelagibacter ubique	virulent	cluster_250832	subcluster_315195
+AP013445.1	38622	30.855470975091915	Caudovirales	Complete	Candidatus Pelagibacter ubique	virulent	cluster_217921	subcluster_274590
+AP013446.1	32224	38.12686196623635	Caudovirales	Complete	Streptococcus pyogenes	virulent	cluster_87319	subcluster_110192
+AP013447.1	32109	38.03606465476969	Caudovirales	Complete	Streptococcus pyogenes	virulent	cluster_27686	subcluster_34792
+AP013448.1	32115	38.04141366962479	Caudovirales	Complete	Streptococcus pyogenes	virulent	cluster_27686	subcluster_34792
+AP013449.1	31277	38.13025545928318	Caudovirales	Complete	Aeromonas salmonicida	virulent	cluster_15360	subcluster_19247
+AP013450.1	31599	38.41893730814267	Caudovirales	Complete	Aeromonas salmonicida	virulent	cluster_27686	subcluster_34793
+AP013451.1	32174	37.53030397215142	Caudovirales	Complete	Streptococcus pyogenes	virulent	cluster_87319	subcluster_110191
+AP013452.1	32153	38.08353808353808	Caudovirales	Complete	Streptococcus pyogenes	virulent	cluster_27686	subcluster_34794
+AP013453.1	36835	32.44740057010995	Caudovirales	Complete	Enterococcus faecalis	virulent	cluster_72930	subcluster_91997
+AP013454.1	36627	31.94910858110137	Caudovirales	Complete	Candidatus Pelagibacter ubique	virulent	cluster_277690	subcluster_348859
+AP013455.1	36284	32.66729136809613	Caudovirales	Complete	Candidatus Pelagibacter ubique	virulent	cluster_161286	subcluster_202997
+AP013456.1	35468	34.84267508740273	Caudovirales	Complete	Lawsonia intracellularis	virulent	cluster_159221	subcluster_200464
+AP013457.1	38351	34.34069515788376	Caudovirales	Complete	Enterococcus casseliflavus	virulent	cluster_269733	subcluster_338494
+AP013458.1	36898	34.24846875169386	Caudovirales	Complete	Lawsonia intracellularis	virulent	cluster_174567	subcluster_220323
+AP013459.1	38825	32.20862846104314	Caudovirales	Complete	Clostridioides difficile	virulent	cluster_138024	subcluster_173911
+AP013460.1	39004	33.60424571838786	Caudovirales	Complete	Lawsonia intracellularis	virulent	cluster_129377	subcluster_162818
+AP013461.1	37755	40.05562177195073	Caudovirales	Complete	Streptococcus agalactiae	virulent	cluster_228703	subcluster_287866
+AP013462.1	37729	40.077924143232	Caudovirales	Complete	Bacillus cereus	virulent	cluster_8064	subcluster_10022
+AP013463.1	37449	40.14526422601404	Caudovirales	Complete	Streptococcus agalactiae	virulent	cluster_10736	subcluster_13329
+AP013464.1	35852	54.47115921008591	Caudovirales	Complete	Klebsiella pneumoniae	virulent	cluster_262138	subcluster_328983
+AP013465.1	34958	54.871560157903765	Caudovirales	Complete	Klebsiella pneumoniae	virulent	cluster_187126	subcluster_236047
+AP013466.1	34951	54.98555120025178	Caudovirales	Complete	Enterobacter asburiae	virulent	cluster_44549	subcluster_55907
+AP013467.1	35242	54.87202769422848	Caudovirales	Complete	Enterobacter cloacae	temperate	cluster_44549	subcluster_55908
+AP013468.1	35241	54.87642234896853	Caudovirales	Complete	Enterobacter cloacae	temperate	cluster_44549	subcluster_55908
+AP013469.1	34856	41.65710351159054	Caudovirales	Complete	Bacillus cereus	virulent	cluster_78860	subcluster_99181
+AP013470.1	34812	41.64081351258187	Caudovirales	Complete	Lactobacillus fermentum	virulent	cluster_22539	subcluster_28235
+AP013471.1	35133	38.1777815728802	Caudovirales	Complete	Streptococcus agalactiae	virulent	cluster_79134	subcluster_99525
+AP013472.1	34001	52.96020705273374	Caudovirales	Complete	Serratia marcescens	virulent	cluster_223369	subcluster_281301
+AP013473.1	34195	52.99605205439392	Caudovirales	Complete	Mycobacterium smegmatis	virulent	cluster_223369	subcluster_281302
+AP013474.1	35480	36.40360766629087	Caudovirales	Complete	Lawsonia intracellularis	virulent	cluster_154649	subcluster_194574
+AP013475.1	34695	36.443291540567806	Caudovirales	Complete	Lawsonia intracellularis	virulent	cluster_119464	subcluster_150472
+AP013476.1	32720	51.30195599022005	Caudovirales	Complete	Citrobacter freundii	virulent	cluster_110399	subcluster_139100
+AP013477.1	39948	42.778111545008514	Caudovirales	Complete	Parasutterella excrementihominis	virulent	cluster_199284	subcluster_251155
+AP013478.1	33517	31.82265715905361	Caudovirales	Complete	Clostridioides difficile	virulent	cluster_250833	subcluster_315196
+AP013479.1	42029	37.88574555663946	Caudovirales	Complete	Lawsonia intracellularis	virulent	cluster_217922	subcluster_274591
+AP013480.1	34967	37.18077044070123	Caudovirales	Complete	Lawsonia intracellularis	virulent	cluster_217485	subcluster_273941
+AP013481.1	36315	37.38950846757538	Caudovirales	Complete	Pasteurella multocida	virulent	cluster_27687	subcluster_34795
+AP013482.1	36059	38.91954851770709	Caudovirales	Complete	Elizabethkingia anophelis	virulent	cluster_15361	subcluster_19248
+AP013483.1	30688	34.13060479666319	Caudovirales	Complete	Streptococcus pyogenes	virulent	cluster_59803	subcluster_75477
+AP013484.1	30688	34.12082898852972	Caudovirales	Complete	Ruminococcaceae bacterium	virulent	cluster_59803	subcluster_75477
+AP013485.1	32761	31.78474405543176	Caudovirales	Complete	Lawsonia intracellularis	virulent	cluster_87320	subcluster_110193
+AP013486.1	30646	30.46400835345559	Caudovirales	Complete	Clostridioides difficile	virulent	cluster_277516	subcluster_348650
+AP013487.1	30420	30.53911900065746	Caudovirales	Complete	Clostridioides difficile	virulent	cluster_72931	subcluster_91998
+AP013488.1	30646	30.428114598968868	Caudovirales	Complete	Clostridioides difficile	virulent	cluster_277691	subcluster_348860
+AP013489.1	30420	30.558842866535173	Caudovirales	Complete	Clostridioides difficile	virulent	cluster_161287	subcluster_202998
+AP013490.1	32503	31.1478940405501	Caudovirales	Complete	Clostridioides difficile	virulent	cluster_159222	subcluster_200465
+AP013491.1	31229	32.24566908962823	Caudovirales	Complete	Candidatus Pelagibacter ubique	virulent	cluster_269734	subcluster_338495
+AP013492.1	31008	32.149767801857585	Caudovirales	Complete	Candidatus Pelagibacter ubique	virulent	cluster_174568	subcluster_220324
+AP013493.1	31051	32.15677433899069	Caudovirales	Complete	Candidatus Pelagibacter ubique	virulent	cluster_174568	subcluster_220325
+AP013494.1	31247	32.1726885781035	Caudovirales	Complete	Candidatus Pelagibacter ubique	virulent	cluster_269734	subcluster_338496
+AP013495.1	32122	31.44573812340452	Caudovirales	Complete	Ruminococcaceae bacterium	virulent	cluster_228704	subcluster_287867
+AP013496.1	31698	32.10612656949966	Caudovirales	Complete	Bacillus cereus	virulent	cluster_8065	subcluster_10023
+AP013497.1	31699	32.15558850436923	Caudovirales	Complete	Bacillus cereus	virulent	cluster_10737	subcluster_13330
+AP013498.1	31700	32.154574132492115	Caudovirales	Complete	Bacillus cereus	virulent	cluster_10737	subcluster_13330
+AP013499.1	31698	32.090352703640605	Caudovirales	Complete	Bacillus cereus	virulent	cluster_10737	subcluster_13330
+AP013500.1	32406	33.73449361229402	Caudovirales	Complete	Staphylococcus sciuri	virulent	cluster_262139	subcluster_328984
+AP013501.1	32364	32.168458781362006	Caudovirales	Complete	Megamonas funiformis	virulent	cluster_187127	subcluster_236048
+AP013502.1	38514	37.92906475567327	Caudovirales	Complete	Escherichia coli	virulent	cluster_64233	subcluster_80999
+AP013503.1	38569	37.9346106977106	Caudovirales	Complete	Streptococcus agalactiae	virulent	cluster_22540	subcluster_28237
+AP013504.1	38514	37.957625798410966	Caudovirales	Complete	Acinetobacter pittii	virulent	cluster_64233	subcluster_80999
+AP013505.1	38511	37.92422944093895	Caudovirales	Complete	Streptococcus agalactiae	virulent	cluster_78861	subcluster_99182
+AP013506.1	38411	38.012548488714174	Caudovirales	Complete	Streptococcus agalactiae	virulent	cluster_22540	subcluster_28236
+AP013507.1	37334	34.440456420421064	Caudovirales	Complete	Lawsonia intracellularis	virulent	cluster_79135	subcluster_99526
+AP013508.1	34694	36.60863549893353	Caudovirales	Complete	Streptococcus agalactiae	virulent	cluster_223370	subcluster_281303
+AP013509.1	38614	36.11384471953178	Caudovirales	Complete	Bacteroides ovatus	virulent	cluster_17515	subcluster_21983
+AP013510.1	42335	40.38502421164521	Caudovirales	Complete	Lawsonia intracellularis	virulent	cluster_154650	subcluster_194575
+AP013511.1	35735	41.11095564572548	Caudovirales	Complete	Zymomonas mobilis	virulent	cluster_119465	subcluster_150473
+AP013512.1	32707	32.91344360534442	Caudovirales	Complete	Clostridioides difficile	virulent	cluster_110400	subcluster_139101
+AP013513.1	32413	33.09783111714435	Caudovirales	Complete	Clostridioides difficile	virulent	cluster_199285	subcluster_251156
+AP013514.1	33701	37.36090917183466	Caudovirales	Complete	Lawsonia intracellularis	virulent	cluster_250834	subcluster_315197
+AP013515.1	37598	32.75706154582691	Caudovirales	Complete	Lawsonia intracellularis	virulent	cluster_217923	subcluster_274592
+AP013516.1	35191	36.60595038504163	Caudovirales	Complete	Cellulophaga baltica	virulent	cluster_217486	subcluster_273942
+AP013517.1	34524	33.44629822732013	Caudovirales	Complete	Lawsonia intracellularis	virulent	cluster_27688	subcluster_34796
+AP013518.1	38921	36.58693250430359	Caudovirales	Complete	Streptococcus agalactiae	virulent	cluster_15362	subcluster_19249
+AP013519.1	30352	30.34725882973116	Caudovirales	Complete	Bacillus cereus	virulent	cluster_59804	subcluster_75478
+AP013520.1	37934	35.22697316391628	Caudovirales	Complete	Enterococcus gallinarum	virulent	cluster_87321	subcluster_110194
+AP013521.1	35858	30.31680517597189	Caudovirales	Complete	Lawsonia intracellularis	virulent	cluster_277517	subcluster_348651
+AP013522.1	41754	50.84542798294775	Caudovirales	Complete	Serratia marcescens	virulent	cluster_72932	subcluster_91999
+AP013523.1	41982	47.713305702443904	Caudovirales	Complete	Serratia marcescens	virulent	cluster_277692	subcluster_348861
+AP013524.1	39717	49.35669864289851	Caudovirales	Complete	Enterobacter cloacae	virulent	cluster_161288	subcluster_202999
+AP013525.1	42608	47.02168606834397	Caudovirales	Complete	Streptococcus suis	virulent	cluster_159223	subcluster_200466
+AP013526.1	42608	47.01464513706346	Caudovirales	Complete	Streptococcus suis	virulent	cluster_269735	subcluster_338497
+AP013527.1	42638	47.169191800741125	Caudovirales	Complete	Enterobacter cloacae	virulent	cluster_159223	subcluster_200467
+AP013528.1	39371	49.54662060907775	Caudovirales	Complete	Enterobacter cloacae	virulent	cluster_138025	subcluster_173912
+AP013529.1	40572	50.60139998028197	Caudovirales	Complete	Enterobacter cloacae	virulent	cluster_129378	subcluster_162819
+AP013530.1	42200	48.8175355450237	Caudovirales	Complete	Lawsonia intracellularis	virulent	cluster_228705	subcluster_287868
+AP013531.1	42230	48.83258347146578	Caudovirales	Complete	Klebsiella pneumoniae	virulent	cluster_228705	subcluster_287869
+AP013532.1	38241	51.50492926440208	Caudovirales	Complete	Serratia marcescens	temperate	cluster_10738	subcluster_13331
+AP013533.1	37887	49.72417979781984	Caudovirales	Complete	Serratia marcescens	virulent	cluster_262140	subcluster_328985
+AP013534.1	41065	47.24948252769999	Caudovirales	Complete	Helicobacter pylori	virulent	cluster_187128	subcluster_236049
+AP013535.1	40289	35.83112015686664	Caudovirales	Complete	Prochlorococcus marinus	virulent	cluster_44550	subcluster_55909
+AP013536.1	34130	54.09903310870202	Caudovirales	Complete	Corynebacterium diphtheriae	virulent	cluster_64234	subcluster_81000
+AP013537.1	34933	54.98239487018006	Caudovirales	Complete	Mycobacterium tuberculosis	virulent	cluster_78862	subcluster_99183
+AP013538.1	44705	45.2879991052455	Caudovirales	Complete	Prochlorococcus marinus	virulent	cluster_22541	subcluster_28238
+AP013539.1	43444	46.72912254856827	Caudovirales	Complete	Prochlorococcus marinus	virulent	cluster_79136	subcluster_99527
+AP013540.1	40866	32.74360103753732	Caudovirales	Complete	Bacillus cereus	virulent	cluster_174501	subcluster_220248
+AP013541.1	42399	33.920611335173	Caudovirales	Complete	Candidatus Pelagibacter ubique	virulent	cluster_59741	subcluster_75404
+AP013542.1	42564	33.81261159665445	Caudovirales	Complete	Candidatus Pelagibacter ubique	virulent	cluster_39645	subcluster_49816
+AP013543.1	37553	32.40486778686124	Caudovirales	Complete	Candidatus Pelagibacter ubique	virulent	cluster_33656	subcluster_42287
+AP013544.1	40564	47.0860861847944	Caudovirales	Complete	Acinetobacter baumannii	virulent	cluster_267017	subcluster_335109
+AP013545.1	41803	33.75834270267684	Caudovirales	Complete	Candidatus Pelagibacter ubique	virulent	cluster_150366	subcluster_189502
+AP013547.1	43552	56.21326230712711	Caudovirales	Complete	Pseudomonas syringae	temperate	cluster_161216	subcluster_202919
+AP013548.1	43698	57.064396539887404	Caudovirales	Complete	Pseudomonas putida	temperate	cluster_172981	subcluster_218460
+AP013549.1	41987	51.55643413437493	Caudovirales	Complete	Pseudomonas syringae	virulent	cluster_113261	subcluster_142820
+AB863625.1	40471	59.59081811667614	Caudovirales	Complete	Ralstonia solanacearum	virulent	cluster_33693	subcluster_42326
+AP013550.1	32133	35.804313322752314	Caudovirales	Complete	Veillonella parvula	virulent	cluster_223371	subcluster_281304
+AP013551.1	35997	31.73042197960941	Caudovirales	Complete	Candidatus Pelagibacter ubique	virulent	cluster_17516	subcluster_21984
+AP013552.1	35766	31.66974221327517	Caudovirales	Complete	Candidatus Pelagibacter ubique	virulent	cluster_154651	subcluster_194576
+AP013553.1	35009	31.463337998800306	Caudovirales	High-quality	Candidatus Pelagibacter ubique	virulent	cluster_119466	subcluster_150474
+AP013554.1	33993	32.065425234607126	Caudovirales	Complete	Candidatus Pelagibacter ubique	virulent	cluster_110401	subcluster_139102
+AP013555.1	35554	31.43950047814592	Caudovirales	Complete	Candidatus Pelagibacter ubique	virulent	cluster_199286	subcluster_251157
+AP013556.1	33988	31.955396022125456	Caudovirales	Complete	Candidatus Pelagibacter ubique	virulent	cluster_250835	subcluster_315198
+AP013557.1	34141	31.932280835359244	Caudovirales	High-quality	Candidatus Pelagibacter ubique	virulent	cluster_217924	subcluster_274593
+AP013558.1	36091	31.814025657366106	Caudovirales	High-quality	Candidatus Pelagibacter ubique	virulent	cluster_217487	subcluster_273943
+AP013559.1	28986	30.890774856827434	Caudovirales	Complete	Clostridioides difficile	virulent	cluster_27689	subcluster_34797
+AP013560.1	43216	36.83126619770455	Caudovirales	High-quality	Acinetobacter pittii	virulent	cluster_15363	subcluster_19250
+AP013561.1	39729	33.87449973570943	Caudovirales	High-quality	Clostridioides difficile	virulent	cluster_59805	subcluster_75479
+AP013562.1	38341	36.394460238387104	Caudovirales	Complete	Lawsonia intracellularis	virulent	cluster_87322	subcluster_110195
+AP013563.1	42854	47.6244924627806	Caudovirales	Complete	Enterobacter cloacae	virulent	cluster_277518	subcluster_348652
+AP013564.1	41611	51.78919035831871	Caudovirales	Complete	Enterobacter cloacae	temperate	cluster_72933	subcluster_92000
+AP013565.1	41859	50.64860603454454	Caudovirales	High-quality	Enterobacter cloacae	temperate	cluster_277693	subcluster_348862
+AB903967.1	142094	30.309513420693342	Caudovirales	High-quality	Staphylococcus aureus	virulent	cluster_141571	subcluster_178265
+AB716666.1	43871	54.17929839757471	Caudovirales	High-quality	Klebsiella pneumoniae	virulent	cluster_48801	subcluster_61329
+AB920995.1	44360	60.9107303877367	Caudovirales	High-quality	Ralstonia solanacearum	virulent	cluster_44553	subcluster_55914
+AB971354.1	4217	48.13848707612047	Riboviria	High-quality	Escherichia coli	virulent	cluster_22544	subcluster_28241
+AB981169.1	40002	64.82175891205439	Caudovirales	High-quality	Ralstonia solanacearum	temperate	cluster_244799	subcluster_307729
+AB937974.1	7679	59.36970959760386	Inoviridae	High-quality	Ralstonia solanacearum	virulent	cluster_78866	subcluster_99188
+AB931172.1	6386	62.12026307547761	Inoviridae	Medium-quality	Ralstonia solanacearum	virulent	cluster_154655	subcluster_194580
